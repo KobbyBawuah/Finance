@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class = "table table-striped">
+        <thead  style="text-align:left;">
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>traded</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for trade in trades %}
+            <tr style="text-align:left;">
+                <td>{{trade["symbol"]}}</td>
+                <td>{{trade["shares"]}}</td>
+                <td>{{trade["price"]}}</td>
+                <td>{{trade["traded"]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
